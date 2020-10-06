@@ -1,18 +1,17 @@
 {
   "name": "news-explorer-frontend",
   "version": "1.0.0",
-  "description": "frontend diplom",
+  "description": "diplom backend",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --mode production",
-    "dev": "webpack-dev-server --mode development --open --watch",
-    "deploy": "cross-env NODE_ENV=production gh-pages -d dist"
+    "dev": "webpack-dev-server --mode development --open --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kravcov7/news-explorer-frontend.git"
   },
-  "author": "Artem Kravcov",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kravcov7/news-explorer-frontend/issues"
