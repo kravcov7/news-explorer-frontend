@@ -7,10 +7,10 @@ const isDev = process.env.NODE_ENV === "development";
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // добавили плагин
 
 module.exports = {
-  entry: { main: "./src/index.js" },
+  entry: { main: "./src/script/index.js" },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js",
+    filename: "./script/[name].[chunkhash].js",
   },
   module: {
     rules: [
@@ -28,16 +28,19 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+          isDev
+            ? "style-loader"
+            : {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: "../",
+                },
+              },
           "css-loader",
           "postcss-loader",
         ],
       },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"], // добавили минификацию CSS
-      },
-      // пример настройки плагина image-webpack-loader
+      //настройка плагина image-webpack-loader
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
         use: [
@@ -52,8 +55,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      //
-      filename: "style.[contenthash].css",
+      filename: "styles/[name].[contenthash].css"
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
