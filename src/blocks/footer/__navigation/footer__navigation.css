@@ -1,0 +1,6 @@
+.footer__navigation {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+}

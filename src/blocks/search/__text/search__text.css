@@ -1,0 +1,14 @@
+.search__text {
+  font-family: Roboto, Inter, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #FFFFFF;
+  max-width: 545px;
+  margin-top: 0px;
+  margin-bottom: 64px;
+
+}

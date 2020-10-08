@@ -1,8 +1,18 @@
-@import url('./__nav/header-menu__nav.css');
-@import url('./__nav-container/header-menu__nav-container.css');
+@import url("./__nav/header-menu__nav.css");
+@import url("./__nav-container/header-menu__nav-container.css");
+@import url("./__button/header_menu__button.css");
+@import url("./__link/header-menu__link.css");
+@import url("./__article/header-menu__article.css");
 
-.header-menu{
+.header-menu {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  position: relative;
+  background: rgba(196, 196, 196, 0.01);
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  min-height: 80px;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
 }

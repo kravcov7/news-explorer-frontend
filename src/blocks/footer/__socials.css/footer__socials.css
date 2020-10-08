@@ -1,0 +1,7 @@
+.footer__socials {
+  margin-left: 5px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}

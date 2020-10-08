@@ -1,31 +1,198 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Сервис по поиску новостей"/>
-  <meta name="author" content="Артем Кравцов">
-  <title>News</title>
-  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Сервис по поиску новостей" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="<%=require('./images/favicon.png').default%>"
+      type="image/png"
+    />
+    <meta name="author" content="Артем Кравцов" />
+    <title>News</title>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>" />
+  </head>
 
-<body>
-  <div class="root">
-    <header class="header">
-      <div class="header-menu">
-        <div class="logo logo-margin">
-          <h1 class="logo__text">NewsExplorer</h1>
+  <body>
+    <div class="root">
+      <header class="header">
+        <div class="header-menu">
+          <div class="logo logo_margin">
+            <h1 class="logo__text">NewsExplorer</h1>
+          </div>
+          <nav class="header-menu__nav-container">
+            <ul class="header-menu__nav">
+              <li>
+                <a class="header-menu__link header-menu__link_active" href="#"
+                  >Главная</a
+                >
+              </li>
+              <li>
+                <a class="header-menu__link header-menu__article" href=""
+                  >Сохранённые статьи</a
+                >
+              </li>
+            </ul>
+            <button
+              class="header-menu__button header-menu__auth button user-info__button"
+            >
+              Авторизоваться
+            </button>
+          </nav>
         </div>
-        <nav class="header-menu__nav-container">
-          <ul class="header-menu__nav">
-            <li><a class="header-menu__link header-menu__link_active" href="#">Главная</a></li>
-            <li><a class="header-menu__link header-menu_article_nologin" href="">Сохранённые статьи</a></li>
+
+        <section class="search">
+          <h2 class="search__title">Что творится в мире?</h2>
+          <p class="search__text">
+            Находите самые свежие статьи на любую тему и сохраняйте в своем
+            личном кабинете
+          </p>
+          <form action="" class="search__form" name="new-search">
+            <input
+              type="text"
+              name="tag"
+              placeholder="Введите тему новости"
+              class="search__input"
+              id="inputtag"
+            />
+            <button class="button search__button" type="submit">Искать</button>
+          </form>
+        </section>
+      </header>
+
+      <main class="main">
+        <section class="result container">
+          <h2 class="result__title">Результаты поиска</h2>
+          <div class="result__cards">
+            <div class="article">
+              <div class="article__image">
+                <img
+                  src="<%=require('./images/card-1.png').default%>"
+                  alt="картинка новости"
+                  class="article__image-content"
+                />
+                <div class="article__login">
+                  Войдите, чтобы сохранить статьи
+                </div>
+                <div class="article__flag"></div>
+                <span class="article__date">2 августа, 2019</span>
+                <h3 class="article__title">Национальное достояние - парки</h3>
+                <p class="article__text">
+                  В 2016 году Америка отмечала важный юбилей: сто лет назад
+                  здесь начала складываться система национальных парков –
+                  охраняемых территорий, где и сегодня каждый может приобщиться
+                  к природе.
+                </p>
+                <a class="article__source link" href="lenta.ru" target="_blank"
+                  >Лента.ру</a
+                >
+              </div>
+            </div>
+
+            <div class="article">
+              <div class="article__image">
+                <img
+                  src="<%=require('./images/card-2.png').default%>"
+                  alt="картинка новости"
+                  class="article__image-content"
+                />
+                <div class="article__login">
+                  Войдите, чтобы сохранить статьи
+                </div>
+                <div class="article__flag"></div>
+                <span class="article__date">2 августа, 2019</span>
+                <h3 class="article__title">
+                  Лесные огоньки: история одной фотографии
+                </h3>
+                <p class="article__text">
+                  Фотограф отвлеклась от освещения суровой политической
+                  реальности Мексики, чтобы запечатлеть ускользающую красоту
+                  одного из местных чудес природы.
+                </p>
+                <a class="article__source link" href="lenta.ru" target="_blank"
+                  >Медуза</a
+                >
+              </div>
+            </div>
+
+            <div class="article">
+              <div class="article__image">
+                <img
+                  src="<%=require('./images/card-3.png').default%>"
+                  alt="картинка новости"
+                  class="article__image-content"
+                />
+                <div class="article__login">
+                  Войдите, чтобы сохранить статьи
+                </div>
+                <div class="article__flag"></div>
+                <span class="article__date">2 августа, 2019</span>
+                <h3 class="article__title">
+                  «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+                </h3>
+                <p class="article__text">
+                  Знаменитый фотограф снимает первозданные леса России, чтобы
+                  рассказать о необходимости их сохранения. В этот раз он
+                  отправился в Двинско-Пинежскую тайгу, где...
+                </p>
+                <a class="article__source link" href="lenta.ru" target="_blank"
+                  >РИА</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer container">
+        <p class="footer__copyright">
+          &copy; 2020 Supersite, Powered by News API
+        </p>
+        <nav class="footer__navigation">
+          <ul class="footer__links">
+            <li>
+              <a href="https://yandex.ru" class="footer__link" target="_blank"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://praktikum.yandex.ru"
+                class="footer__link"
+                target="_blank"
+                >Яндекс.Практикум</a
+              >
+            </li>
           </ul>
-          <button class="header-menu-button header-menu__auth button user-info__button">Регистрация</button>
+          <ul class="footer__socials">
+            <li>
+              <a
+                href="https://github.com/kravcov7"
+                class="footer__social"
+                target="_blank"
+                ><img
+                  src="<%=require('../src/images/github.svg').default%>"
+                  alt="Github"
+                  class="footer__img"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://facebook.com"
+                class="footer__social"
+                target="_blank"
+                ><img
+                  src="<%=require('../src/images/faceb.svg').default%>"
+                  alt="Facebook"
+                  class="footer__img"
+              /></a>
+            </li>
+          </ul>
         </nav>
-      </div>
-    </header>
-  </div>
-  <script src="<%=htmlWebpackPlugin.files.js%>"></script>
-</body>
+      </footer>
+    </div>
+    <script src="<%=htmlWebpackPlugin.files.js%>"></script>
+  </body>
 </html>
