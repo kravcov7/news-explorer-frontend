@@ -1,5 +1,12 @@
 .header{
-  width: 100%;
-  margin: auto;
-  background-image: url('../../images/header-background.png');
+  position: relative;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 576px;
+    margin: auto;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:50%;
+    background-image: url('../../images/header-background.png');
+    box-sizing: border-box;
 }
