@@ -1,0 +1,19 @@
+.article__icon{
+  position: absolute;
+  background-image: url("../../../images/icon.svg");
+  z-index: 2;
+  right: 24px;
+  top: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.article__icon:hover{
+  cursor: pointer;
+  background-image: url("../../../images/icon_hover.svg");
+
+}

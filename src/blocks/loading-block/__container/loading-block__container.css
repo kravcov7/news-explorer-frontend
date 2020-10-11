@@ -1,0 +1,7 @@
+.loading-block__container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  align-items: center;
+}

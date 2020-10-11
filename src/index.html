@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>" />
   </head>
 
-  <body>
+  <body class="body">
     <div class="root">
       <header class="header">
         <div class="header-menu">
@@ -63,85 +63,136 @@
       </header>
 
       <main class="main">
-        <section class="result container">
+        <section class="result result_container">
           <h2 class="result__title">Результаты поиска</h2>
-          <div class="result__cards">
+          <div class="result__articles">
             <div class="article">
-              <div class="article__image">
+              <div class="article__item">
                 <img
                   src="<%=require('./images/card-1.png').default%>"
                   alt="картинка новости"
-                  class="article__image-content"
+                  class="article__image"
                 />
-                <div class="article__login">
+                <div class="article__login article__login_displ-none">
                   Войдите, чтобы сохранить статьи
                 </div>
-                <div class="article__flag"></div>
-                <span class="article__date">2 августа, 2019</span>
-                <h3 class="article__title">Национальное достояние - парки</h3>
-                <p class="article__text">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад
-                  здесь начала складываться система национальных парков –
-                  охраняемых территорий, где и сегодня каждый может приобщиться
-                  к природе.
-                </p>
-                <a class="article__source link" href="lenta.ru" target="_blank"
-                  >Лента.ру</a
-                >
+                <div class="article__icon"></div>
               </div>
+              <span class="article__date">2 августа, 2019</span>
+              <h3 class="article__title">Национальное достояние - парки</h3>
+              <p class="article__text">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <a class="article__source link" href="lenta.ru" target="_blank"
+                >Лента.ру</a
+              >
             </div>
 
             <div class="article">
-              <div class="article__image">
+              <div class="article__item">
                 <img
                   src="<%=require('./images/card-2.png').default%>"
                   alt="картинка новости"
-                  class="article__image-content"
+                  class="article__image"
                 />
-                <div class="article__login">
+                <div class="article__login article__login_displ-none">
                   Войдите, чтобы сохранить статьи
                 </div>
-                <div class="article__flag"></div>
-                <span class="article__date">2 августа, 2019</span>
-                <h3 class="article__title">
-                  Лесные огоньки: история одной фотографии
-                </h3>
-                <p class="article__text">
-                  Фотограф отвлеклась от освещения суровой политической
-                  реальности Мексики, чтобы запечатлеть ускользающую красоту
-                  одного из местных чудес природы.
-                </p>
-                <a class="article__source link" href="lenta.ru" target="_blank"
-                  >Медуза</a
-                >
+                <div class="article__icon"></div>
               </div>
+              <span class="article__date">2 августа, 2019</span>
+              <h3 class="article__title">
+                Лесные огоньки: история одной фотографии
+              </h3>
+              <p class="article__text">
+                Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть ускользающую красоту одного из
+                местных чудес природы.
+              </p>
+              <a class="article__source link" href="lenta.ru" target="_blank"
+                >Медуза</a
+              >
             </div>
 
             <div class="article">
-              <div class="article__image">
+              <div class="article__item">
                 <img
                   src="<%=require('./images/card-3.png').default%>"
                   alt="картинка новости"
-                  class="article__image-content"
+                  class="article__image"
                 />
-                <div class="article__login">
+                <div class="article__login article__login_displ-none">
                   Войдите, чтобы сохранить статьи
                 </div>
-                <div class="article__flag"></div>
-                <span class="article__date">2 августа, 2019</span>
-                <h3 class="article__title">
-                  «Первозданная тайга»: новый фотопроект Игоря Шпиленка
-                </h3>
-                <p class="article__text">
-                  Знаменитый фотограф снимает первозданные леса России, чтобы
-                  рассказать о необходимости их сохранения. В этот раз он
-                  отправился в Двинско-Пинежскую тайгу, где...
-                </p>
-                <a class="article__source link" href="lenta.ru" target="_blank"
-                  >РИА</a
-                >
+                <div class="article__icon"></div>
               </div>
+              <span class="article__date">2 августа, 2019</span>
+              <h3 class="article__title">
+                «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+              </h3>
+              <p class="article__text">
+                Знаменитый фотограф снимает первозданные леса России, чтобы
+                рассказать о необходимости их сохранения. В этот раз он
+                отправился в Двинско-Пинежскую тайгу, где...
+              </p>
+              <a class="article__source link" href="lenta.ru" target="_blank"
+                >РИА</a
+              >
             </div>
+          </div>
+
+          <button class="result__button button">Показать еще</button>
+        </section>
+
+        <section class="loading-block">
+          <div class="loading-block__container container">
+            <div class="loading-block__preloader"></div>
+            <p class="loading-block__text">Идет поиск новостей...</p>
+          </div>
+        </section>
+
+        <section class="loading-block">
+          <div class="loading-block__container container">
+            <img class="loading-block__image" src="<%=require('../src/images/not-found.svg').default%>" alt="ничего не найдено" />
+            <p class="loading-block__title">Ничего не найдено</p>
+            <p class="loading-block__text">
+              К сожалению по вашему запросу ничего не найдено.
+            </p>
+          </div>
+        </section>
+
+        <section class="author">
+          <picture class="author__avatar">
+            <source
+              media="(min-width: 1440px)"
+              srcset="<%=require('../src/images/avatar_1440.jpg').default%>"
+            />
+            <source
+              media="(min-width: 1024px)"
+              srcset="<%=require('./images/avatar_1024.jpg').default%>"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="<%=require('./images/avatar_768.jpg').default%>"
+            />
+            <img
+              src="<%=require('./images/avatar_320.jpg').default%>"
+              alt="Автор сайта"
+            />
+          </picture>
+          <div class="author__info">
+            <h3 class="author__title">Об авторе</h3>
+            <p class="author__text">
+              Это блок с описанием автора проекта. Здесь следует указать, как
+              вас зовут, чем вы занимаетесь, какими технологиями разработки
+              владеете.
+            </p>
+            <p class="author__text">
+              Также можно рассказать о процессе обучения в Практикуме, чему вы
+              тут научились, и чем можете помочь потенциальным заказчикам.
+            </p>
           </div>
         </section>
       </main>

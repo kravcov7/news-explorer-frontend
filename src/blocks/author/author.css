@@ -1,0 +1,13 @@
+/* @import url('./__avatar/author__avatar.css'); */
+@import url('./__info/author__info.css');
+@import url('./__title/author__title.css');
+@import url('./__text/author__text.css');
+
+.author{
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 104px;
+    max-width: 1440px;
+    margin: auto;
+}

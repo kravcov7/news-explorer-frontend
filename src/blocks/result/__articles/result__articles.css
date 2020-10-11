@@ -1,0 +1,12 @@
+.result__articles {
+  position: relative;
+  width: 100%;
+  margin-bottom: 64px;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px 16px;
+  box-sizing: border-box;
+}

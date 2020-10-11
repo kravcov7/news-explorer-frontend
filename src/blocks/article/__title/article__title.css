@@ -1,0 +1,15 @@
+.article__title{
+  margin: 12px 24px 16px 24px;
+  max-width: 352px;
+  font-family: Roboto Slab, Inter, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
+}
