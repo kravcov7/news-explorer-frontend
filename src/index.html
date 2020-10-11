@@ -195,6 +195,110 @@
             </p>
           </div>
         </section>
+
+        <div class="popup">
+          <div class="popup__content">
+            <img class="popup__close" src="<%=require('./images/popup-close-white.svg').default%>" alt="Закрыть">
+            <h3 class="popup__title">Вход</h3>
+            <form class="form" name="login" novalidate>
+              <div class="form__input-block">
+                <label for="email-login" class="form__label"><span class="popup__colored-text">Email</span></label>
+                <input
+                  class="form__input form__input_type_email"
+                  type="email"
+                  id="email-login"
+                  name="email-login"
+                  placeholder="Введите Email"
+                  required
+                >
+                <span id="email-error-login" class="form__error">Неправильный формат email</span>
+              </div>
+              <div class="form__input-block">
+                <label for="password" class="form__label"><span class="popup__colored-text">Пароль</span></label>
+                <input
+                  class="form__input form__input_type_password"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Введите пароль"
+                  required
+                  minlength="8"
+                  pattern=".[^\s]{8,}"
+                >
+                <span id="password-error-login" class="form__error">Введите более 8 символов</span>
+              </div>
+              <div class="form__input-block"></div>
+              <button type="submit" name="button" class="form__button ">Войти</button>
+            </form>
+            <p class="popup__text">или
+              <span class="popup__link popup__colored-text">Зарегистрироваться</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="popup popup__signup">
+          <div class="popup__content">
+            <img class="popup__close" src="<%=require('./images/popup-close-white.svg').default%>" alt="Закрыть">
+            <h3 class="popup__title">Регистрация</h3>
+            <form class="form" name="signup" novalidate>
+              <div class="form__input-block">
+                <label for="email-signup" class="form__label"><span class="popup__colored-text">Email</span></label>
+                <input
+                  class="form__input form__input_type_email"
+                  type="email"
+                  id="email-signup"
+                  name="email-signup"
+                  placeholder="Введите Email"
+                  required
+                >
+                <span id="email-error-signup" class="form__error">Неправильный формат email</span>
+              </div>
+              <div class="form__input-block">
+                <label for="password" class="form__label"><span class="popup__colored-text">Пароль</span></label>
+                <input
+                  class="form__input form__input_type_password"
+                  type="password"
+                  id="password-signup"
+                  name="password-signup"
+                  placeholder="Введите пароль"
+                  required
+                  minlength="8"
+                  pattern=".[^\s]{8,}"
+                >
+                <span id="password-error-signup" class="form__error">Введите более 8 символов</span>
+              </div>
+              <div class="form__input-block">
+                <label for="name" class="form__label"><span class="popup__colored-text">Имя</span></label>
+                <input
+                  class="form__input form__input_type_name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Введите своё имя"
+                  required
+                  minlength="2"
+                  maxlength="30"
+                  pattern="^(?!-)(?!.*--)[А-ЯЁа-яёa-zA-z]+(-[А-ЯЁа-яёa-zA-Z]+)?"
+                >
+                <span id="name-error" class="form__error">Введите не менее 2 символов</span>
+              </div>
+              <div class="form__input-block">
+                <span id="already-exists-error" class="form__error form__error_centre">Такой пользователь уже зарегестрирован</span>
+                <button type="submit" name="button" class="form__button">Зарегистрироваться</button>
+              </div>
+            </form>
+            <p class="popup__text">или <span class="popup__link popup__colored-text">Войти</span></p>
+          </div>
+        </div>
+
+        <div class="popup popup__success">
+          <div class="popup__content">
+            <img class="popup__close" src="<%=require('./images/popup-close-white.svg').default%>" alt="Закрыть">
+            <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+            <p class="popup__text popup__text_left"><span class="popup__colored-text popup__link">Войти</span></p>
+          </div>
+        </div>
+
       </main>
 
       <footer class="footer container">
