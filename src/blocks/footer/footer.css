@@ -2,8 +2,8 @@
 @import url("./__links/footer__links.css");
 @import url("./__navigation/footer__navigation.css");
 @import url("./__socials.css/footer__socials.css");
-@import url('./__social/footer__social.css');
-@import url('./__link/footer__link.css');
+@import url("./__social/footer__social.css");
+@import url("./__link/footer__link.css");
 
 .footer {
   max-width: 1440px;
@@ -17,4 +17,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+  .footer {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .footer {
+    padding: 0 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

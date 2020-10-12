@@ -5,3 +5,10 @@
   padding-bottom: 50px;
   align-items: center;
 }
+
+@media screen and (min-width: 1024px) {
+  .loading-block__container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}

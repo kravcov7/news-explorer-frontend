@@ -7,7 +7,10 @@ const isDev = process.env.NODE_ENV === "development";
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // добавили плагин
 
 module.exports = {
-  entry: { main: "./src/script/index.js" },
+  entry: {
+    main: './src/script/index.js',
+    articles: './src/script/articles.js',
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "./script/[name].[chunkhash].js",
@@ -27,17 +30,14 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [
-          isDev
-            ? "style-loader"
-            : {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                  publicPath: "../",
-                },
-              },
-          "css-loader",
-          "postcss-loader",
+        use: [(isDev ? 'style-loader' : { loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } }),
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2
+          }
+        },
+          'postcss-loader',
         ],
       },
       //настройка плагина image-webpack-loader
@@ -88,6 +88,14 @@ module.exports = {
       inject: false,
       template: "./src/index.html",
       filename: "index.html",
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      // hash: true,
+      template: './src/articles.html',
+      filename: 'articles.html',
+      chunks: ['articles']
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({

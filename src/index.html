@@ -10,7 +10,7 @@
       href="<%=require('./images/favicon.png').default%>"
       type="image/png"
     />
-    <meta name="author" content="Артем Кравцов" />
+    <meta name="author" content="Artem Kravtsov" />
     <title>News</title>
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>" />
   </head>
@@ -35,12 +35,21 @@
                 >
               </li>
             </ul>
-            <button
-              class="header-menu__button header-menu__auth button user-info__button"
-            >
-              Авторизоваться
-            </button>
+            <button class="header-menu__button button user-info__button">Авторизоваться</button>
           </nav>
+          <button class="header-menu__nav-mobile-toggle-button"></button>
+          <div class="header-menu__nav-mobile">
+            <nav class="header-menu__nav-mobile-content">
+                <ul class = "header-menu__nav-mobile-link">
+                <li><a class="header-menu__link header-menu__link_mobile" href="#">Главная</a></li>
+                <li><a class="header-menu__link header-menu__article header-menu__link_mobile" href="./articles.html">Сохранённые
+                    статьи</a></li>
+                </ul>
+                <button class="header-menu__button button header-menu__button_mobile">Авторизоваться
+                </button>
+
+            </nav>
+          </div>
         </div>
 
         <section class="search">

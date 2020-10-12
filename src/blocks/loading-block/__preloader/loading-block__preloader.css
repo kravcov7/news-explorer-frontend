@@ -14,3 +14,10 @@
 	margin: 0 auto 24px;
   animation: spin .75s infinite linear;
 }
+
+@media screen and (min-width: 1024px) {
+  .loading-block__preloader {
+    width: 74px;
+    height: 74px;
+  }
+}

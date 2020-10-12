@@ -5,3 +5,16 @@
   align-items: center;
   padding: 0;
 }
+
+@media screen  and (min-width: 760px) and (max-width: 1023px){
+  .footer__socials{
+      margin-top: 10px;
+  }
+}
+
+@media screen  and (max-width: 759px){
+  .footer__socials{
+      padding: 0px;
+      align-items: flex-start;
+  }
+}

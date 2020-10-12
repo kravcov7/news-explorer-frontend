@@ -7,3 +7,12 @@
     color: white;
     box-sizing: border-box;
 }
+
+@media screen  and (max-width: 759px) {
+  .logo__text {
+      font-size: 16px;
+      text-align: left;
+      margin: 0;
+
+  }
+}

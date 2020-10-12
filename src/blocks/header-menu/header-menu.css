@@ -2,7 +2,12 @@
 @import url("./__nav-container/header-menu__nav-container.css");
 @import url("./__button/header_menu__button.css");
 @import url("./__link/header-menu__link.css");
+@import url('__nav-mobile/__nav-mobile-toggle-button/header-menu__nav-mobile-toggle-button.css');
+@import url('./__link/_auth/header-menu__link_auth.css');
 @import url("./__article/header-menu__article.css");
+@import url('./__nav-mobile/header-menu__nav-mobile.css');
+@import url('./__nav-mobile/__nav-mobile-content/header-menu__nav-mobile-content.css');
+@import url('./__nav-mobile-link/header-menu__nav-mobile-link.css');
 
 .header-menu {
   display: flex;
@@ -15,4 +20,16 @@
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+  .header-menu {
+    min-height: 66px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .header-menu {
+    min-height: 56px;
+  }
 }

@@ -10,3 +10,19 @@
   margin: 0 auto 64px 0;
   text-overflow:  ellipsis;
 }
+
+@media screen  and (min-width: 760px) and (max-width: 1023px){
+  .result__title{
+      font-size: 30px;
+      line-height: 34px;
+      margin: 0 auto 32px 0;
+  }
+}
+
+@media screen and (max-width: 759px){
+  .result__title{
+      font-size: 30px;
+      line-height: 34px;
+      margin: 0 auto 24px 0;
+  }
+}

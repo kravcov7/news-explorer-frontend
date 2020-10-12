@@ -2,6 +2,7 @@
 @import url('./_container/result_container.css');
 @import url('./__articles/result__articles.css');
 @import url('./__button/result__button.css');
+@import url('./_container-articles/result_container-articles.css');
 
 .result{
   max-width: 1440px;

@@ -10,3 +10,19 @@
   grid-gap: 20px 16px;
   box-sizing: border-box;
 }
+
+@media screen  and (min-width: 760px) and (max-width: 1023px) {
+  .result__articles {
+      grid-gap: 8px 8px;
+      margin-bottom: 22px;
+  }
+}
+
+
+@media screen and (max-width: 759px) {
+  .result__articles {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px 10px;
+      margin-bottom: 15px;
+  }
+}

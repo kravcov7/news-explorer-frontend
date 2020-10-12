@@ -1,4 +1,4 @@
-.article__icon{
+.article__icon {
   position: absolute;
   background-image: url("../../../images/icon.svg");
   z-index: 2;
@@ -12,8 +12,21 @@
   background-position: center;
 }
 
-.article__icon:hover{
+.article__icon:hover {
   cursor: pointer;
   background-image: url("../../../images/icon_hover.svg");
+}
 
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+  .article__icon {
+    right: 8px;
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .article__icon {
+    right: 16px;
+    top: 16px;
+  }
 }

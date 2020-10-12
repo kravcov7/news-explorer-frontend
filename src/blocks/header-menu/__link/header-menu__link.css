@@ -19,3 +19,17 @@
 .header-menu__link:hover{
   cursor: pointer;
 }
+
+@media screen  and (min-width: 760px) and (max-width: 1023px){
+  .header-menu__link{
+      font-size: 16px;
+      margin-right: 16px;
+      margin-top: 28px;
+  }
+  }
+
+  @media screen and (max-width: 759px){
+      .header-menu__link{
+          display: none;
+      }
+  }

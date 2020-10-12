@@ -17,3 +17,14 @@
 .search__input:focus {
   outline: none;
 }
+
+
+@media screen and (max-width: 759px) {
+  .search__input {
+      max-width: 288px;
+      width: 100%;
+      min-height: 54px;
+      margin: auto auto 16px auto;
+      flex-grow: 3;
+  }
+}
