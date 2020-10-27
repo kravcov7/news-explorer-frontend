@@ -6,6 +6,7 @@
   position: relative;
   box-sizing: border-box;
   padding: 16px 17px;
+  z-index: 7;
 }
 
 @media screen and (min-width: 534px) {

@@ -6,12 +6,18 @@
 @import url(./__colored-text/popup__colored-text.css);
 @import url(./__link/popup__link.css);
 @import url(./__text/_left/popup__text_left.css);
+@import url(./__overlay/popup__overlay.css);
+@import url(./__button-align/popup__button-align.css);
+@import url(./__button/popup__button.css);
+@import url(./__button/_valid/popup__button_valid.css);
+@import url(./__form/popup__form.css);
 
 
 
 .popup {
     position: fixed;
-    top: 56px;
+    /* top: 56px; */
+    top: 0;
     left: 0;
     right: 0;
     height: 100vh;
