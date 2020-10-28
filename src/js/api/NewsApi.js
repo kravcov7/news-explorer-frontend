@@ -1,7 +1,8 @@
 export default class NewsApi {
   constructor() {}
 
-  getNews(keyword) {
+  getNews({keyword}) {
+    console.log(keyword)
     const today = new Date();
     const weekInMS = 604800000;
     const lastweek = new Date(today.getTime() - weekInMS);
@@ -12,7 +13,7 @@ export default class NewsApi {
     ).then((res) => this._returnJson(res));
   }
 
-  _returnJson = (res) => {
+  _returnJson(res)  {
     if (res.ok) {
       return res.json();
     }

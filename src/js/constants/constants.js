@@ -1,5 +1,5 @@
 const defaultMainApi = {
-  url: 'https://www.api.news-card.site/api',
+  url: 'http://178.154.231.202',
   headers: {
       "Content-Type": "application/json"
   }
