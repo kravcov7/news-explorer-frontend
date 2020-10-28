@@ -5,7 +5,7 @@ export default class NewsCard {
     this.cardTemplate = cardTemplate;
   };
 
-  createCard() {
+  create() {
     this.card = this.cardTemplate.cloneNode(true);
     // this.card.querySelector('.article__link').setAttribute('href', this.data.url)
     this.card.querySelector('.article__title').textContent = this.data.title;

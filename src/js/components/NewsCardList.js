@@ -5,18 +5,15 @@ export default class NewsCardList {
     this.createCard = createCard;
     this.articlesArr = [];
     this.resultMoreButton = resultMoreButton;
-    console.log(this.createCard)
   };
 
-  addCard(data) {
-    console.log(this.createCard)
+  addCard = (data) => {
     this.resultContainer.append(this.createCard(data, this.cardTemplate).create());
   }
 
   render(articles) {
     this.articlesArr = articles;
     const initArr = articles.slice(0, 3);
-    console.log(initArr)
     initArr.forEach(data => {
       this.addCard(data)
     });
@@ -31,27 +28,5 @@ export default class NewsCardList {
       this.resultMoreButton.classList.add('hidden');
     }
   }
-  // constructor() {
 
-  // }
-
-  // renderResults() {
-
-  // }
-
-  // renderLoader() {
-
-  // }
-
-  // renderError() {
-
-  // }
-
-  // showMore() {
-
-  // }
-
-  // addCard() {
-
-  // }
 }

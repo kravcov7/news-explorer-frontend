@@ -7,6 +7,7 @@ import FormValidator from "../js/components/FormValidator";
 import MainApi from "../js/api/MainApi";
 import NewsApi from "../js/api/NewsApi";
 import NewsCardList from "../js/components/NewsCardList";
+import NewsCard from "../js/components/NewsCard";
 
 import { defaultMainApi } from "../js/constants/constants";
 
@@ -22,9 +23,12 @@ const signUpSubmitBtn = document.querySelector("#signup-submit-button");
 const searchFormInput = document.querySelector("#search-form");
 const searchFormButton = document.querySelector(".search__button");
 const resultNotFound = document.querySelector('#not-found');
-const resultLoader = document.querySelector('#loader');
-const resultContainer = document.querySelector('.result__container');
+const resultLoader = document.querySelector('#preloader');
+const resultContainer = document.querySelector('.result__articles');
+const resultBlock = document.querySelector('.result_container');
 const resultMoreButton = document.querySelector('.result__button');
+const resultTitle = document.querySelector('.result__title');
+
 const cardTemplate = document.querySelector('#card-template').content.querySelector('.article');
 
 const succesPopup = document.querySelector("#succes-popup");
@@ -49,7 +53,7 @@ const validateLogin = new FormValidator(formLogin, errorMessages);
 const validateSignUp = new FormValidator(formSignup, errorMessages);
 const createCard = (...args) => new NewsCard(...args);
 const addCard = (...arg) => new NewsCardList(resultContainer, cardTemplate, createCard).addCard(...arg);
-const cardList = new NewsCardList(cardTemplate, createCard);
+const cardList = new NewsCardList(resultContainer, cardTemplate, createCard);
 
 function getInputsAuth(event) {
   event.preventDefault();
@@ -76,12 +80,12 @@ function formSearchEvent(event) {
         return resultNotFound.classList.remove("hidden");
       } else {
         cardList.render(res.articles);
-
+        resultBlock.classList.remove('hidden');
       }
     })
     .then(() => {
-      resultContainer.classList.remove('hidden');
-      resultLoading.classList.add('hidden');
+      resultBlock.classList.remove('hidden');
+      resultLoader.classList.add('hidden');
     })
     .catch((err) => console.log(err));
 }

@@ -84,24 +84,25 @@
         </section>
       </header>
 
+
+      <section id="not-found" class="loading-block loading-block__container hidden">
+        <img
+        class="loading-block__image"
+        src="<%=require('../src/images/not-found.svg').default%>"
+        alt="ничего не найдено"
+        />
+        <p class="loading-block__title">Ничего не найдено</p>
+        <p class="loading-block__text">
+          К сожалению по вашему запросу ничего не найдено.
+        </p>
+      </section>
+
       <section
         id="preloader"
         class="loading-block loading-block__container hidden"
       >
         <i class="loading-block__preloader"></i>
         <p class="loading-block__text">Идет поиск новостей...</p>
-      </section>
-
-      <section id="not-found" class="loading-block loading-block__container hidden">
-        <img
-          class="loading-block__image"
-          src="<%=require('../src/images/not-found.svg').default%>"
-          alt="ничего не найдено"
-        />
-        <p class="loading-block__title">Ничего не найдено</p>
-        <p class="loading-block__text">
-          К сожалению по вашему запросу ничего не найдено.
-        </p>
       </section>
 
       <main class="main">
