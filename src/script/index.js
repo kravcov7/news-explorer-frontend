@@ -8,6 +8,8 @@ import MainApi from "../js/api/MainApi";
 import NewsApi from "../js/api/NewsApi";
 import NewsCardList from "../js/components/NewsCardList";
 import NewsCard from "../js/components/NewsCard";
+import PopupSignIn from "../js/components/PopupSignIn";
+import PopupSignUp from "../js/components/PopupSignUp";
 
 import { defaultMainApi } from "../js/constants/constants";
 
@@ -15,7 +17,8 @@ const auth = document.querySelector(".header-menu__button");
 const popupAuthorization = document.querySelector("#authorization");
 const signUp = document.querySelector("#signin-button");
 const enterButton = document.querySelector("#enter-button");
-const signIn = document.querySelector("#signup-popup");
+const popupRegistr = document.querySelector("#signup-popup");
+const succesPopup = document.querySelector("#succes-popup");
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
 const signInSubmitBtn = document.querySelector("#signin-submit-button");
@@ -31,29 +34,34 @@ const resultTitle = document.querySelector('.result__title');
 
 const cardTemplate = document.querySelector('#card-template').content.querySelector('.article');
 
-const succesPopup = document.querySelector("#succes-popup");
+
 const inputDataAuthorization = { email: "", password: "" };
 const inputDataSignUp = { email: "", password: "", name: "" };
 const inputDataSearch = { keyword: "" };
 
 const togglePopup = new Popup(
   popupAuthorization,
-  signIn,
+  popupRegistr,
   signUp,
   succesPopup,
   auth,
   enterButton
 );
+togglePopup.authListener();
+const mainApi = new MainApi(defaultMainApi);
+const popupSignIn = new PopupSignIn (popupAuthorization, mainApi, auth);
+
+const popupSignUp = new PopupSignUp(popupRegistr, mainApi);
 const formAuth = new Form(formLogin, inputDataAuthorization);
 const formSign = new Form(formSignup, inputDataSignUp);
 const formSearch = new Form(searchFormInput, inputDataSearch);
-const mainApi = new MainApi(defaultMainApi);
 const newsApi = new NewsApi();
 const validateLogin = new FormValidator(formLogin, errorMessages);
 const validateSignUp = new FormValidator(formSignup, errorMessages);
 const createCard = (...args) => new NewsCard(...args);
 const addCard = (...arg) => new NewsCardList(resultContainer, cardTemplate, createCard).addCard(...arg);
 const cardList = new NewsCardList(resultContainer, cardTemplate, createCard);
+
 
 function getInputsAuth(event) {
   event.preventDefault();
@@ -90,6 +98,7 @@ function formSearchEvent(event) {
     .catch((err) => console.log(err));
 }
 
-signInSubmitBtn.addEventListener("click", getInputsAuth);
-signUpSubmitBtn.addEventListener("click", getInputsSign);
+// signInSubmitBtn.addEventListener("click", getInputsAuth);
+// signUpSubmitBtn.addEventListener("click", getInputsSign);
 searchFormButton.addEventListener("click", formSearchEvent);
+resultMoreButton.addEventListener('click', () => cardList.renderMore());

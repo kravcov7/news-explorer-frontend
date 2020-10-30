@@ -1,67 +1,50 @@
 export default class MainApi {
-  constructor(data) {
-    this.url = data.url;
-    this.headers = data.headers;
-  }
+  constructor() {}
 
-  signUp({email, password, name}) {
-    return fetch(`${this.url}/signup`, {
-      method: 'POST',
-      headers: this.headers,
-      credentials: 'include',
-      body: JSON.stringify({email, password, name}),
-    })
-      .then((res) => this._returnJson(res))
-  };
-
-
-  signIn(email, password) {
-    return fetch(`${this.url}/signin`, {
-      method: 'POST',
-      headers: this.headers,
-      credentials: 'include',
-      body: JSON.stringify({email, password}),
-    })
-      .then((res) => this._returnJson(res))
-  };
-
-  getArticles() {
-    return fetch(`${this.url}/articles`, {
-      method: "GET",
-      headers: this.headers,
-      credentials: 'include',
-    })
-      .then((res) => this._returnJson(res))
-  };
-
-  createArticle(saveData) {
-    return fetch(`${this.url}/articles`, {
+  signUp = ({ email, password, name }) => {
+    return fetch(`http://178.154.231.202/signup`, {
       method: "POST",
-      credentials: "include",
-      headers: this.headers,
-      body: JSON.stringify({
-        keyword: saveData.keyword,
-        title: saveData.title,
-        text: saveData.text,
-        date: saveData.date,
-        source: saveData.source,
-        link: saveData.link,
-        image: saveData.image,
-      }),
-    })
-      .then((res) => this._returnJson(res));
-  };
-
-
-  removeArticle(id) {
-    return fetch(`${this.url}/articles/${id}`, {
-      method: "DELETE",
-      credentials: "include",
-      headers: this.headers,
-      body: JSON.stringify({id}),
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password, name }),
     })
       .then((res) => this._returnJson(res))
+      .catch((err) => {
+        throw err;
+      });
   };
+
+  signIn = ({email, password }) => {
+    return fetch(`http://178.154.231.202/signin`, {
+      method: "POST",
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({email, password }),
+    })
+      .then((res) => this._returnJson(res))
+      .catch((err) => {
+        throw err;
+      });
+  };
+
+  getUser() {
+    return fetch(`http://localhost:3000/users/me`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => this._returnJson(res))
+      .catch((err) => {
+        throw err;
+      });
+  }
 
   _returnJson(res) {
     if (!res.ok) {

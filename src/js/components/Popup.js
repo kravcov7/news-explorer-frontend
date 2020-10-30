@@ -1,17 +1,17 @@
 export default class Popup {
   constructor(container, signIn, signUpBtn, succesPopup, auth, enterButton) {
-    this._container = container;
-    this._signIn = signIn;
-    this._signUpBtn = signUpBtn;
-    this._enterButton = enterButton;
-    this._succesPopup = succesPopup;
+    this._container = container || "";
+    this._signIn = signIn || "";
+    this._signUpBtn = signUpBtn || "";
+    this._enterButton = enterButton || "";
+    this._succesPopup = succesPopup || "";
     this.open = this.open.bind(this);
+    this.authListener = this.authListener.bind(this);
     this._setListner = this._setListner.bind(this);
-    this._close = this._close.bind(this);
+    this.close = this.close.bind(this);
     this.togglePopup = this.togglePopup.bind(this);
-    this._auth = auth;
+    this._auth = auth || "";
     this._clearContent = this._clearContent.bind(this);
-    this.authListener();
   }
 
   authListener() {
@@ -46,9 +46,12 @@ export default class Popup {
   }
 
   _clearContent(popup) {
-    popup.querySelectorAll('.form__input').forEach( (el) => { el.value = ''});
-    popup.querySelectorAll('.form__error').forEach( (el) => { el.textContent = ''});
-
+    popup.querySelectorAll(".form__input").forEach((el) => {
+      el.value = "";
+    });
+    popup.querySelectorAll(".form__error").forEach((el) => {
+      el.textContent = "";
+    });
   }
 
   open(popup) {
@@ -56,7 +59,8 @@ export default class Popup {
     this._setListner(popup);
   }
 
-  _close(popup) {
+  close(popup) {
+    console.log(popup);
     this._clearContent(popup);
     popup.classList.remove("popup_is-opened");
   }
