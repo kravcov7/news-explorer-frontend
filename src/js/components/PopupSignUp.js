@@ -5,7 +5,7 @@ export default class PopupSignUp extends Popup {
     this._container = container;
     this._signUp = container;
     this._signUpBtn = container.querySelector('#signup-submit-button');
-    console.log(this._signUpBtn);
+    // console.log(this._signUpBtn);
     this._succesPopup = container.querySelector('#succes-popup');
     // this._auth = auth;
     this.userMail = container.querySelector('#email-signup');
@@ -35,7 +35,7 @@ export default class PopupSignUp extends Popup {
         console.log(res);
         super.close();
         // this.messagePopup.open();
-        this.header.render();
+        // this.header.render();
       })
       .catch((err) => console.log(err)
       // {

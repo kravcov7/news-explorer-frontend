@@ -21,8 +21,8 @@ export default class Popup {
   _setListner(popup) {
     const closeButtonPopup = popup.querySelector("#close-popup");
     const overlay = popup.querySelector("#overlay");
-    overlay.addEventListener("click", () => this._close(popup));
-    closeButtonPopup.addEventListener("click", () => this._close(popup));
+    overlay.addEventListener("click", () => this.close(popup));
+    closeButtonPopup.addEventListener("click", () => this.close(popup));
     this._signUpBtn.addEventListener("click", (event) =>
       this.togglePopup(event)
     );
@@ -34,9 +34,9 @@ export default class Popup {
   togglePopup(event) {
     if (event.target === this._signUpBtn) {
       this.open(this._signIn);
-      this._close(this._container);
+      this.close(this._container);
     } else if (event.target === this._enterButton) {
-      this._close(this._signIn);
+      this.close(this._signIn);
       this.open(this._container);
     }
   }
@@ -45,11 +45,11 @@ export default class Popup {
     this._signUp.classList.add("popup_is-opened");
   }
 
-  _clearContent(popup) {
-    popup.querySelectorAll(".form__input").forEach((el) => {
+  _clearContent() {
+    this._container.querySelectorAll(".form__input").forEach((el) => {
       el.value = "";
     });
-    popup.querySelectorAll(".form__error").forEach((el) => {
+    this._container.querySelectorAll(".form__error").forEach((el) => {
       el.textContent = "";
     });
   }
@@ -60,8 +60,7 @@ export default class Popup {
   }
 
   close(popup) {
-    console.log(popup);
     this._clearContent(popup);
-    popup.classList.remove("popup_is-opened");
+    this._container.classList.remove("popup_is-opened");
   }
 }

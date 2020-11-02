@@ -24,22 +24,20 @@
           </div>
           <nav class="header-menu__nav-container">
             <ul class="header-menu__nav">
-              <li>
-                <a class="header-menu__link header-menu__link_active" href="#"
-                  >Главная</a
-                >
-              </li>
-              <li>
-                <a class="header-menu__link header-menu__article" href=""
-                  >Сохранённые статьи</a
-                >
-              </li>
+              <li><a class="header-menu__link header-menu__link_active" href="#">Главная</a></li>
+              <li class="header__item hidden" id="article-link"><a class="header-menu__link" href="">Сохранённые статьи</a></li>
+              <!-- <li class="header-menu__link" id="quit-button"><button class="header-menu__button button user-info__button ">
+                <p class="header__text" id="greeting">Грета</p><img class="header__button-icon" src="<%=require('../src/images/exit-white.svg').default %>" alt="Иконка выхода (разлогиниться)">
+              </button></li> -->
+
             </ul>
-            <button class="header-menu__button button user-info__button">
-              Авторизоваться
+            <button class="header-menu__button button user-info__button hidden" id="quit-button">
+              <p class="header__text" id="greeting">Грета</p><img class="header__button-icon" src="<%=require('../src/images/exit-white.svg').default %>" alt="Иконка выхода">
             </button>
+            <button id="authorization-button" class="header-menu__button button user-info__button">Авторизоваться</button>
           </nav>
-          <button class="header-menu__nav-mobile-toggle-button"></button>
+
+          <!-- <button class="header-menu__nav-mobile-toggle-button"></button>
           <div class="header-menu__nav-mobile">
             <nav class="header-menu__nav-mobile-content">
               <ul class="header-menu__nav-mobile-link">
@@ -55,14 +53,14 @@
                     >Сохранённые статьи</a
                   >
                 </li>
+
               </ul>
               <button
                 class="header-menu__button button header-menu__button_mobile"
               >
                 Авторизоваться
               </button>
-            </nav>
-          </div>
+          </div> -->
         </div>
 
         <section class="search">

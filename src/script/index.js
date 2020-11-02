@@ -13,7 +13,7 @@ import PopupSignUp from "../js/components/PopupSignUp";
 
 import { defaultMainApi } from "../js/constants/constants";
 
-const auth = document.querySelector(".header-menu__button");
+const auth = document.querySelector("#authorization-button");
 const popupAuthorization = document.querySelector("#authorization");
 const signUp = document.querySelector("#signin-button");
 const enterButton = document.querySelector("#enter-button");
@@ -31,6 +31,13 @@ const resultContainer = document.querySelector('.result__articles');
 const resultBlock = document.querySelector('.result_container');
 const resultMoreButton = document.querySelector('.result__button');
 const resultTitle = document.querySelector('.result__title');
+
+// Header
+const savedArticle = document.querySelector('.header-menu__article');
+const noUser = document.querySelector('.menu__li_nouser');
+
+const userName = document.querySelector('.menu__button_auth_user');
+
 
 const cardTemplate = document.querySelector('#card-template').content.querySelector('.article');
 
