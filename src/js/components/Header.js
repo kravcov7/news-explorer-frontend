@@ -1,24 +1,29 @@
-export class Header {
+export default class Header {
   constructor(api) {
     this.api = api;
     this.articleLink = document.querySelector('#article-link');
     this.quitButton = document.querySelector('#quit-button');
     this.auth = document.querySelector('#authorization-button');
-    this.headerIcon = document.querySelector('.header__icon');
-    this.templateClose = document.querySelector('#icon-close').content.querySelector('img');
-    this.templateOpen = document.querySelector('#icon-open').content.querySelector('img');
+    // this.headerIcon = document.querySelector('.header__icon');
+    // this.templateClose = document.querySelector('#icon-close').content.querySelector('img');
+    // this.templateOpen = document.querySelector('#icon-open').content.querySelector('img');
   }
 
   render() {
     this.api.getUser()
       .then((res) => {
         if (res === undefined) {
-          return;
-        }
-        this.loginButtonHeader.classList.add('hidden');
+          this.auth.classList.remove('hidden');
+        this.articleLink.classList.add('hidden');
+
+        this.quitButton.classList.add('hidden');
+        } else {
+          this.auth.classList.add('hidden');
         this.articleLink.classList.remove('hidden');
         document.querySelector('#greeting').textContent = res.name;
         this.quitButton.classList.remove('hidden');
+        }
+
       })
       .catch(err => console.log(err));
   }

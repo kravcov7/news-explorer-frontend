@@ -24,17 +24,39 @@
           </div>
           <nav class="header-menu__nav-container">
             <ul class="header-menu__nav">
-              <li><a class="header-menu__link header-menu__link_active" href="#">Главная</a></li>
-              <li class="header__item hidden" id="article-link"><a class="header-menu__link" href="">Сохранённые статьи</a></li>
+              <li>
+                <a class="header-menu__link header-menu__link_active" href="#"
+                  >Главная</a
+                >
+              </li>
+              <li class="header__item hidden" id="article-link">
+                <a
+                  class="header-menu__link"
+                  href="http://localhost:8080/articles.html"
+                  >Сохранённые статьи</a
+                >
+              </li>
               <!-- <li class="header-menu__link" id="quit-button"><button class="header-menu__button button user-info__button ">
-                <p class="header__text" id="greeting">Грета</p><img class="header__button-icon" src="<%=require('../src/images/exit-white.svg').default %>" alt="Иконка выхода (разлогиниться)">
+                <p class="header__text" id="greeting">Грета</p><img class="header__button-icon" src="<%=require('../src/images/exit-white.svg').default %>" alt="Иконка выхода">
               </button></li> -->
-
             </ul>
-            <button class="header-menu__button button user-info__button hidden" id="quit-button">
-              <p class="header__text" id="greeting">Грета</p><img class="header__button-icon" src="<%=require('../src/images/exit-white.svg').default %>" alt="Иконка выхода">
+            <button
+              class="header-menu__button button user-info__button hidden"
+              id="quit-button"
+            >
+              <p class="header__text" id="greeting">Грета</p>
+              <img
+                class="header__button-icon"
+                src="<%=require('../src/images/exit-white.svg').default %>"
+                alt="Иконка выхода"
+              />
             </button>
-            <button id="authorization-button" class="header-menu__button button user-info__button">Авторизоваться</button>
+            <button
+              id="authorization-button"
+              class="header-menu__button button user-info__button"
+            >
+              Авторизоваться
+            </button>
           </nav>
 
           <!-- <button class="header-menu__nav-mobile-toggle-button"></button>
@@ -82,12 +104,14 @@
         </section>
       </header>
 
-
-      <section id="not-found" class="loading-block loading-block__container hidden">
+      <section
+        id="not-found"
+        class="loading-block loading-block__container hidden"
+      >
         <img
-        class="loading-block__image"
-        src="<%=require('../src/images/not-found.svg').default%>"
-        alt="ничего не найдено"
+          class="loading-block__image"
+          src="<%=require('../src/images/not-found.svg').default%>"
+          alt="ничего не найдено"
         />
         <p class="loading-block__title">Ничего не найдено</p>
         <p class="loading-block__text">
@@ -107,7 +131,6 @@
         <section class="result result_container hidden">
           <h2 class="result__title">Результаты поиска</h2>
           <div class="result__articles">
-
             <template id="card-template">
               <div class="article">
                 <div class="article__item">
@@ -115,7 +138,25 @@
                   <div class="article__login article__login_displ-none">
                     Войдите, чтобы сохранить статьи
                   </div>
-                  <div class="article__icon"></div>
+                  <button class="article__icon">
+                    <!-- <img
+                    src="<%=require('../src/images/save.svg').default %>"
+                      alt="Иконка сохранить"
+                      id="icon-unhover"
+                    />
+                     <img
+                      src="<%=require('../src/images/save_hover.svg').default %>"
+                      alt="Иконка сохранить"
+                      id="icon-hover"
+                      class="hidden"
+                    />
+                    <img
+                      src="<%=require('../src/images/save_marked.svg').default %>"
+                      alt="Иконка сохранить"
+                      id="icon-mark"
+                      class="hidden"
+                    /> -->
+                  </button>
                 </div>
                 <span class="article__date"></span>
                 <h3 class="article__title"></h3>
@@ -127,7 +168,6 @@
                 ></a>
               </div>
             </template>
-
           </div>
 
           <button class="result__button button">Показать еще</button>
@@ -166,7 +206,8 @@
           </div>
         </section>
 
-        <div id="authorization" class="popup">
+        <!-- ---------- попап входа -------- -->
+        <div id="authorization" class="popup hidden">
           <div id="overlay" class="popup__overlay"></div>
           <div class="popup__content">
             <img
@@ -235,7 +276,8 @@
           </div>
         </div>
 
-        <div id="signup-popup" class="popup popup__signup">
+        <!-- ------ попап регистрации ------  -->
+        <div id="signup-popup" class="popup hidden">
           <div id="overlay" class="popup__overlay"></div>
           <div class="popup__content">
             <img

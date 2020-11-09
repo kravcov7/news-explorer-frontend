@@ -1,6 +1,6 @@
 import Popup from './Popup';
 export default class PopupSignUp extends Popup {
-  constructor(container, api, messagePopup) {
+  constructor(container, api, messagePopup, header) {
     super();
     this._container = container;
     this._signUp = container;
@@ -32,15 +32,11 @@ export default class PopupSignUp extends Popup {
     };
     this.api.signUp(newUserInfo)
       .then((res) => {
-        console.log(res);
         super.close();
         // this.messagePopup.open();
-        // this.header.render();
       })
       .catch((err) => console.log(err)
-      // {
-      //   this.popup.querySelector('.popup__error-message_centred').textContent = err.message;
-      // }
+      // { this.popup.querySelector('.popup__error-message_centred').textContent = err.message; }
       )
   }
 

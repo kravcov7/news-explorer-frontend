@@ -1,6 +1,6 @@
 import Popup from "./Popup";
 export default class PopupSignIn extends Popup {
-  constructor(container, api, auth) {
+  constructor(container, api, auth, header) {
     super();
     this._container = container;
     this._signIn = container;
@@ -11,7 +11,7 @@ export default class PopupSignIn extends Popup {
     this.mail = container.querySelector("#email-login");
     this.password = container.querySelector("#password");
     this.api = api;
-    // this.header = header;
+    this.header = header;
     // this.login = this.login.bind(this);
     this._clearContent = this._clearContent.bind(this);
     this.setSubmitListeners();
@@ -23,11 +23,14 @@ export default class PopupSignIn extends Popup {
       email: this.mail.value,
       password: this.password.value,
     };
+    console.log(loginData)
     this.api
       .signIn(loginData)
       .then((res) => {
+        // localStorage.setItem('token', res.token);
         super.close();
-        // this.header.render();
+        // console.log('после закрытия попапа получаем новый хедер');
+        this.header.render();
       })
       .catch(
         (err) => console.log(err)

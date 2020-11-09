@@ -10,6 +10,7 @@ import NewsCardList from "../js/components/NewsCardList";
 import NewsCard from "../js/components/NewsCard";
 import PopupSignIn from "../js/components/PopupSignIn";
 import PopupSignUp from "../js/components/PopupSignUp";
+import Header from "../js/components/Header";
 
 import { defaultMainApi } from "../js/constants/constants";
 
@@ -35,6 +36,7 @@ const resultTitle = document.querySelector('.result__title');
 // Header
 const savedArticle = document.querySelector('.header-menu__article');
 const noUser = document.querySelector('.menu__li_nouser');
+const quitButton = document.querySelector('#quit-button');
 
 const userName = document.querySelector('.menu__button_auth_user');
 
@@ -56,7 +58,8 @@ const togglePopup = new Popup(
 );
 togglePopup.authListener();
 const mainApi = new MainApi(defaultMainApi);
-const popupSignIn = new PopupSignIn (popupAuthorization, mainApi, auth);
+const header = new Header(mainApi);
+const popupSignIn = new PopupSignIn (popupAuthorization, mainApi, auth, header);
 
 const popupSignUp = new PopupSignUp(popupRegistr, mainApi);
 const formAuth = new Form(formLogin, inputDataAuthorization);
@@ -73,18 +76,19 @@ const cardList = new NewsCardList(resultContainer, cardTemplate, createCard);
 function getInputsAuth(event) {
   event.preventDefault();
   const inputData = formAuth.getInfo();
-  console.log(inputData);
 }
 
 function getInputsSign(event) {
   event.preventDefault();
   const inputData = formSign.getInfo();
+  console.log(inputData)
   mainApi
     .signUp(inputData)
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 }
 
+// поиск
 function formSearchEvent(event) {
   event.preventDefault();
   const inputData = formSearch.getInfo();
@@ -105,7 +109,19 @@ function formSearchEvent(event) {
     .catch((err) => console.log(err));
 }
 
-// signInSubmitBtn.addEventListener("click", getInputsAuth);
-// signUpSubmitBtn.addEventListener("click", getInputsSign);
-searchFormButton.addEventListener("click", formSearchEvent);
-resultMoreButton.addEventListener('click', () => cardList.renderMore());
+function exit() {
+  mainApi.unlogin()
+  .then(() => {
+    header.render();
+  })
+  .catch((err) => console.log(err))
+}
+
+signInSubmitBtn.addEventListener("click", getInputsAuth); // кнопка входа
+signUpSubmitBtn.addEventListener("click", getInputsSign); // кнопка регистрации попапа
+searchFormButton.addEventListener("click", formSearchEvent); // кнопка Поиска
+resultMoreButton.addEventListener('click', () => cardList.renderMore()); // кнопка Показать еще
+
+quitButton.addEventListener('click', exit); // кнопка разлогина
+
+header.render();

@@ -14,6 +14,26 @@ export default class Popup {
     this._clearContent = this._clearContent.bind(this);
   }
 
+  open(popup) {
+    popup.classList.add("popup_is-opened");
+    this._setListner(popup);
+  }
+
+  close(popup) {
+    this._clearContent(popup);
+    this._container.classList.remove("popup_is-opened");
+    console.log('закртыие попапа')
+  }
+
+  _clearContent() {
+    this._container.querySelectorAll(".form__input").forEach((el) => {
+      el.value = "";
+    });
+    this._container.querySelectorAll(".form__error").forEach((el) => {
+      el.textContent = "";
+    });
+  }
+
   authListener() {
     this._auth.addEventListener("click", () => this.open(this._container));
   }
@@ -43,24 +63,5 @@ export default class Popup {
 
   openSignUp() {
     this._signUp.classList.add("popup_is-opened");
-  }
-
-  _clearContent() {
-    this._container.querySelectorAll(".form__input").forEach((el) => {
-      el.value = "";
-    });
-    this._container.querySelectorAll(".form__error").forEach((el) => {
-      el.textContent = "";
-    });
-  }
-
-  open(popup) {
-    popup.classList.add("popup_is-opened");
-    this._setListner(popup);
-  }
-
-  close(popup) {
-    this._clearContent(popup);
-    this._container.classList.remove("popup_is-opened");
   }
 }
