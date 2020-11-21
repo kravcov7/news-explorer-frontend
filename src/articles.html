@@ -18,7 +18,7 @@
   <body class="body">
     <div class="root">
       <header class="header header_white">
-        <div class="header-menu header-menu-auth">
+        <!-- <div class="header-menu header-menu-auth">
           <div class="logo logo_margin">
             <h1 class="logo__text logo__text_black">NewsExplorer</h1>
           </div>
@@ -40,6 +40,28 @@
           </nav>
           <button class="header-menu__nav-mobile-toggle-button header-menu__nav-mobile-toggle-button_black">
           </button>
+        </div> -->
+
+        <div class="header-menu header-menu-auth">
+          <div class="logo logo_margin">
+            <h1 class="logo__text logo__text_black">NewsExplorer</h1>
+          </div>
+          <nav class="header-menu__nav-container">
+            <ul class="header-menu__nav">
+              <li>
+                <a class="header-menu__link header-menu__link_auth" href="http://localhost:8080">Главная</a>
+              </li>
+              <li class="header__item hidden" id="article-link">
+                <a class="header-menu__link header-menu__link_auth header-menu__link_active-black" href="#">Сохранённые статьи</a>
+              </li>
+
+            </ul>
+            <button class="header-menu-auth__button header-menu__button button user-info__button hidden" id="quit-button">
+              <p class="header__text header__text_black" id="greeting">Грета</p>
+              <img class="header__button-icon" src="<%=require('./images/exit.svg').default %>" alt="Иконка выхода" />
+            </button>
+            <button id="authorization-button" class="header-menu__button button user-info__button">Авторизоваться</button>
+          </nav>
         </div>
 
         <section class="user-info user-info_container">

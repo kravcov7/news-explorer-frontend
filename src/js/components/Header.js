@@ -20,8 +20,8 @@ export default class Header {
 
           this.quitButton.classList.add('hidden');
         } else {
-          // this.auth.classList.add('hidden');
-          // this.articleLink.classList.remove('hidden');
+          this.auth.classList.add('hidden');
+          this.articleLink.classList.remove('hidden');
           document.querySelector('#greeting').textContent = res.name;
           this.quitButton.classList.remove('hidden');
         }
