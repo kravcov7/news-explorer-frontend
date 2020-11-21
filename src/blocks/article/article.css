@@ -8,6 +8,7 @@
 @import url('./__sourse/article__source.css');
 @import url('./__label/article__label.css');
 @import url('./__delete/article__delete.css');
+@import url('./__link/article__link.css');
 
 .article{
   position: relative;

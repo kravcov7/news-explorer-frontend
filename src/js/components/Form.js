@@ -6,8 +6,6 @@ export default class Form {
     this._inputData = inputData;
   }
 
-  setServerError() {}
-
   getInfo() {
     let i = 0;
     for (let element in this._inputData) {

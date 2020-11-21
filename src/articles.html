@@ -52,14 +52,14 @@
         </section>
       </header>
 
-      <section class="loading-block">
+      <section class="loading-block hidden">
         <div class="loading-block__container container">
           <div class="loading-block__preloader"></div>
           <p class="loading-block__text">Идет поиск новостей...</p>
         </div>
       </section>
 
-      <section class="loading-block">
+      <section class="loading-block hidden">
         <div class="loading-block__container container">
           <img class="loading-block__image" src="<%=require('../src/images/not-found.svg').default%>" alt="ничего не найдено" />
           <p class="loading-block__title">Ничего не найдено</p>
@@ -73,13 +73,10 @@
         <section class="result result_container-articles">
 
           <div class="result__articles">
+
             <div class="article">
               <div class="article__item">
-                <img
-                  src="<%=require('./images/image_21.png').default%>"
-                  alt="картинка новости"
-                  class="article__image"
-                />
+                <img src="<%=require('./images/image_21.png').default%>" alt="картинка новости" class="article__image" />
                 <div class="article__login article__login_displ-none">Убрать из сохранённых
                 </div>
                 <div class="article__label">Природа</div>
@@ -87,99 +84,40 @@
               </div>
               <span class="article__date">2 августа, 2019</span>
               <h3 class="article__title">Национальное достояние - парки</h3>
-              <p class="article__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
+              <p class="article__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
               </p>
               <a class="article__source link" href="lenta.ru" target="_blank">ДЗЕН</a>
             </div>
 
-            <div class="article">
-              <div class="article__item">
-                <img
-                  src="<%=require('./images/image_22.png').default%>"
-                  alt="картинка новости"
-                  class="article__image"
-                />
-                <div class="article__login article__login_displ-none">Убрать из сохранённых
+            <template id="card-template">
+              <div class="article lower-layer">
+                <div class="article__item">
+                  <p class="article__label lower-layer">Природа</p>
+                  <div class="article__icon-container">
+                    <p class="article__tooltip lower-layer hidden">Убрать из сохранённых</p>
+                    <button class="article__icon">
+                      <img src="<%=require('../src/images/delete.svg').default %>" alt="Иконка удалить" id="icon-unhover">
+                      <img src="<%=require('../src/images/delete-hover.svg').default %>" alt="Иконка сохранить"
+                        id="icon-hover" class="hidden">
+                    </button>
+                  </div>
                 </div>
-                <div class="article__label">Природа</div>
-                <div class="article__icon article__delete"></div>
+                <a href="" target="_blank" class="article__link">
+                  <img src="<%=require('./images/image_21.png').default %>" class="article__image" alt="Фото к статье"
+                    class="article__icon-img">
+                  <div class="article__description">
+                    <p class="article__date">2 августа, 2019</p>
+                    <h3 class="article__title">Национальное достояние – парки</h3>
+                    <p class="article__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
+                      складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться
+                      к природе.</p>
+                  </div>
+                  <p class="article__source">Лента.ру</p>
+                </a>
               </div>
-              <span class="article__date">2 августа, 2019</span>
-              <h3 class="article__title">Лесные огоньки: история одной фотографии</h3>
-              <p class="article__text">
-                Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-из местных чудес природы.
-              </p>
-              <a class="article__source link" href="lenta.ru" target="_blank">АФИША</a>
-            </div>
+            </template>
 
-            <div class="article">
-              <div class="article__item">
-                <img
-                  src="<%=require('./images/image_23.png').default%>"
-                  alt="картинка новости"
-                  class="article__image"
-                />
-                <div class="article__login article__login_displ-none">Убрать из сохранённых
-                </div>
-                <div class="article__label">Тайга</div>
-                <div class="article__icon article__delete"></div>
-              </div>
-              <span class="article__date">2 августа, 2019</span>
-              <h3 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="article__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <a class="article__source link" href="lenta.ru" target="_blank">МЕДИАЗОНА</a>
-            </div>
-
-            <div class="article">
-              <div class="article__item">
-                <img
-                  src="<%=require('./images/image_21.png').default%>"
-                  alt="картинка новости"
-                  class="article__image"
-                />
-                <div class="article__login article__login_displ-none">Убрать из сохранённых
-                </div>
-                <div class="article__label">Парки</div>
-                <div class="article__icon article__delete"></div>
-              </div>
-              <span class="article__date">2 августа, 2019</span>
-              <h3 class="article__title">Национальное достояние - парки</h3>
-              <p class="article__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <a class="article__source link" href="lenta.ru" target="_blank">ДЗЕН</a>
-            </div>
-
-            <div class="article">
-              <div class="article__item">
-                <img
-                  src="<%=require('./images/image_22.png').default%>"
-                  alt="картинка новости"
-                  class="article__image"
-                />
-                <div class="article__login article__login_displ-none">Убрать из сохранённых
-                </div>
-                <div class="article__label">Фотография</div>
-                <div class="article__icon article__delete"></div>
-              </div>
-              <span class="article__date">2 августа, 2019</span>
-              <h3 class="article__title">Лесные огоньки: история одной фотографии</h3>
-              <p class="article__text">
-                Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-из местных чудес природы.
-              </p>
-              <a class="article__source link" href="lenta.ru" target="_blank">ДЗЕН</a>
-            </div>
 
           </div>
 

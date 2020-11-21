@@ -10,28 +10,29 @@ export default class Header {
   }
 
   render() {
-    this.api.getUser()
+    this.api
+      .getUser()
       .then((res) => {
+        console.log(res)
         if (res === undefined) {
           this.auth.classList.remove('hidden');
-        this.articleLink.classList.add('hidden');
+          this.articleLink.classList.add('hidden');
 
-        this.quitButton.classList.add('hidden');
+          this.quitButton.classList.add('hidden');
         } else {
-          this.auth.classList.add('hidden');
-        this.articleLink.classList.remove('hidden');
-        document.querySelector('#greeting').textContent = res.name;
-        this.quitButton.classList.remove('hidden');
+          // this.auth.classList.add('hidden');
+          // this.articleLink.classList.remove('hidden');
+          document.querySelector('#greeting').textContent = res.name;
+          this.quitButton.classList.remove('hidden');
         }
-
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }
 
   openMenu() {
     while (this.headerIcon.firstChild) {
       this.headerIcon.removeChild(this.headerIcon.firstChild);
-    };
+    }
     const cross = this.templateClose.cloneNode(true);
     this.headerIcon.append(cross);
     this.headerIcon.addEventListener('click', () => this.closeMenu());
@@ -46,7 +47,7 @@ export default class Header {
   closeMenu() {
     while (this.headerIcon.firstChild) {
       this.headerIcon.removeChild(this.headerIcon.firstChild);
-    };
+    }
     const open = this.templateOpen.cloneNode(true);
     this.headerIcon.append(open);
     this.headerIcon.addEventListener('click', () => this.openMenu());

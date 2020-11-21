@@ -23,13 +23,11 @@ export default class PopupSignIn extends Popup {
       email: this.mail.value,
       password: this.password.value,
     };
-    console.log(loginData)
     this.api
       .signIn(loginData)
       .then((res) => {
         // localStorage.setItem('token', res.token);
         super.close();
-        // console.log('после закрытия попапа получаем новый хедер');
         this.header.render();
       })
       .catch(
