@@ -10,8 +10,9 @@ formSearchEvent(keyword) {
   event.preventDefault();
   // const inputData = formSearch.getInfo();
   this.api
-    .getNews(keyword)
+    .getNews({keyword})
     .then((res) => {
+      console.log(keyword)
       if (res.articles.length === 0) {
         resultNotFound.classList.remove("hidden");
       } else {

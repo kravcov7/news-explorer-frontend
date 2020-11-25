@@ -66,7 +66,7 @@
 
         <section class="user-info user-info_container">
           <p class="user-info__subtitle">Сохранённые статьи</p>
-            <h1 class="user-info__title"><span class="user-info__title-name">Грета</span>, у вас
+            <h1 class="user-info__title"><span class="user-info__title-name" id="user-greeting">Грета</span>, у вас
                 <span class="user-info__num">5</span> сохранённых статей</h1>
             <p class="user-info__text">По ключевым словам: <span
                     class="user-info__tag">Природа, Тайга</span> и <span class="user-info__numtag">2-м</span> другим
@@ -99,7 +99,7 @@
             <div class="article">
               <div class="article__item">
                 <img src="<%=require('./images/image_21.png').default%>" alt="картинка новости" class="article__image" />
-                <div class="article__login article__login_displ-none">Убрать из сохранённых
+                <div class="article__login ">Убрать из сохранённых
                 </div>
                 <div class="article__label">Природа</div>
                 <div class="article__icon article__delete"></div>
@@ -117,7 +117,7 @@
                 <div class="article__item">
                   <p class="article__label lower-layer">Природа</p>
                   <div class="article__icon-container">
-                    <p class="article__tooltip lower-layer hidden">Убрать из сохранённых</p>
+                    <p class="article__login lower-layer hidden">Убрать из сохранённых</p>
                     <button class="article__icon">
                       <img src="<%=require('../src/images/delete.svg').default %>" alt="Иконка удалить" id="icon-unhover">
                       <img src="<%=require('../src/images/delete-hover.svg').default %>" alt="Иконка сохранить"
@@ -140,9 +140,7 @@
               </div>
             </template>
 
-
           </div>
-
 
         </section>
 

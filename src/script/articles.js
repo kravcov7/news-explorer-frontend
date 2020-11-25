@@ -14,6 +14,13 @@ const addCard = (...arg) => new NewsCardList(resultContainer, cardTemplate, crea
 const cardList = new NewsCardList(resultContainer, cardTemplate, createCard, mainApi);
 const articlesCard = new ArticlesCard(mainApi);
 
+mainApi.getArticles()
+  .then((res) => {
+    const savedArticlesArr = res.data;
 
+    articlesCard.render(savedArticlesArr);
+    cardList.renderSavedArticles(res);
+  })
+  .catch(err => console.log(err));
 
 header.render();

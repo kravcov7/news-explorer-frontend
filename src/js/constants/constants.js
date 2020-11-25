@@ -17,6 +17,7 @@ export const resultBlock = document.querySelector('.result_container');
 export const resultMoreButton = document.querySelector('.result__button');
 export const resultTitle = document.querySelector('.result__title');
 export const inputTag = document.querySelector('#inputtag');
+export const searchWord = document.querySelector('.search__input');
 
 
 // Header
@@ -25,6 +26,8 @@ export const noUser = document.querySelector('.menu__li_nouser');
 export const quitButton = document.querySelector('#quit-button');
 
 export const userName = document.querySelector('.menu__button_auth_user');
+
+export const userSpan = document.querySelector('#user-greeting');
 
 export const cardTemplate = document.querySelector('#card-template').content.querySelector('.article');
 

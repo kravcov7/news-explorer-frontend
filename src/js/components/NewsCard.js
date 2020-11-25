@@ -1,3 +1,6 @@
+import { searchWord, imageUrl } from '../constants/constants';
+import { editDataFormat } from '../utils/utils'
+
 export default class NewsCard {
   constructor(data, cardTemplate, api) {
     this.api = api;
@@ -30,7 +33,7 @@ export default class NewsCard {
   createArticle() {
     this.card = this.cardTemplate.cloneNode(true);
     console.log('зашел в createArticle')
-    this.card.querySelector('.article__container').dataset.id = this.data._id;
+    this.card.querySelector('.article__item').dataset.id = this.data._id;
     this.card.querySelector('.article__link').setAttribute('href', this.data.link);
     this.card.querySelector('.article__label').textContent = this.data.keyword;
     this.card.querySelector('.article__title').textContent = this.data.title;
@@ -46,6 +49,7 @@ export default class NewsCard {
   _hoverIcon() {
     console.log('иконка сохранить')
     const iconSave = this.card.querySelector('.article__login')
+    console.log(iconSave)
     this.card.querySelector('#icon-hover').classList.remove('hidden');
     this.card.querySelector('#icon-unhover').classList.add('hidden');
     if (document.URL.includes('articles')) {
@@ -93,7 +97,7 @@ export default class NewsCard {
   _cancelSaveArticle() {
     this.card.querySelector('#icon-unhover').classList.remove('hidden');
     this.card.querySelector('#icon-mark').classList.add('hidden');
-    this.api.removeArticle(this.articleID)
+    this.api.deleteCard(this.articleID)
       .then(() => {
         const articleIcon = this.card.querySelector('.article__icon');
         articleIcon.addEventListener('click', this._saveArticle);
@@ -105,9 +109,9 @@ export default class NewsCard {
 
   _deleteArticle() {
     this._removeListeners();
-    const articleID = this.card.querySelector('.article__container').dataset.id;
+    const articleID = this.card.querySelector('.article__item').dataset.id;
     this.card.closest('.article').remove();
-    this.api.removeArticle(articleID)
+    this.api.deleteCard(articleID)
       .then(() => { window.location.reload(); })
       .catch(err => alert(err));
   }
@@ -120,7 +124,7 @@ export default class NewsCard {
 
   _removeListeners() {
     const articleIcon = this.card.querySelector('.article__icon');
-    articleIcon.removeEventListener('mouseover', console.log('111'));
+    articleIcon.removeEventListener('mouseover', console.log('удаляем слушатели'));
     articleIcon.removeEventListener('mouseover', this._hoverIcon);
     articleIcon.removeEventListener('mouseout', this._unHoverIcon);
     articleIcon.removeEventListener('click', this._saveArticle);
