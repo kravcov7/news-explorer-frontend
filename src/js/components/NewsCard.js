@@ -32,7 +32,6 @@ export default class NewsCard {
 
   createArticle() {
     this.card = this.cardTemplate.cloneNode(true);
-    console.log('зашел в createArticle')
     this.card.querySelector('.article__item').dataset.id = this.data._id;
     this.card.querySelector('.article__link').setAttribute('href', this.data.link);
     this.card.querySelector('.article__label').textContent = this.data.keyword;
@@ -47,15 +46,15 @@ export default class NewsCard {
   }
 
   _hoverIcon() {
-    console.log('иконка сохранить')
-    const iconSave = this.card.querySelector('.article__login')
-    console.log(iconSave)
+    const iconSave = this.card.querySelector('.article__login');
     this.card.querySelector('#icon-hover').classList.remove('hidden');
     this.card.querySelector('#icon-unhover').classList.add('hidden');
+    
     if (document.URL.includes('articles')) {
       iconSave.classList.remove('hidden');
     } else if (localStorage.getItem('token') === null) {
       iconSave.classList.remove('hidden');
+
     }
   }
 

@@ -9,6 +9,7 @@ export default class Result {
 formSearchEvent(keyword) {
   event.preventDefault();
   // const inputData = formSearch.getInfo();
+  resultLoader.classList.remove('hidden');
   this.api
     .getNews({keyword})
     .then((res) => {

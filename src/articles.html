@@ -68,34 +68,17 @@
           <p class="user-info__subtitle">Сохранённые статьи</p>
             <h1 class="user-info__title"><span class="user-info__title-name" id="user-greeting">Грета</span>, у вас
                 <span class="user-info__num" id="articles-num">5</span> <span id="articles-caption">сохранённых статей</span></h1>
-            <p class="user-info__text">По ключевым словам: <span
-                    class="user-info__tag">Природа, Тайга</span> и <span class="user-info__numtag">2-м</span> другим
+            <p class="user-info__text">
+              <!-- По ключевым словам: <span
+                    class="user-info__tag">Природа, Тайга</span> и <span class="user-info__numtag">2-м</span> другим -->
             </p>
         </section>
       </header>
-
-      <section class="loading-block hidden">
-        <div class="loading-block__container container">
-          <div class="loading-block__preloader"></div>
-          <p class="loading-block__text">Идет поиск новостей...</p>
-        </div>
-      </section>
-
-      <section class="loading-block hidden">
-        <div class="loading-block__container container">
-          <img class="loading-block__image" src="<%=require('../src/images/not-found.svg').default%>" alt="ничего не найдено" />
-          <p class="loading-block__title">Ничего не найдено</p>
-          <p class="loading-block__text">
-            К сожалению по вашему запросу ничего не найдено.
-          </p>
-        </div>
-      </section>
 
       <main class="main">
         <section class="result result_container-articles">
 
           <div class="result__articles">
-
             <!-- <div class="article">
               <div class="article__item">
                 <img src="<%=require('./images/image_21.png').default%>" alt="картинка новости" class="article__image" />

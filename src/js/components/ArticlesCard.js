@@ -1,4 +1,4 @@
-import { firstTagSpan, secondTagSpan, tagAmountSpan, articlesNum, articlesCaption, tagCaptionSpan, userSpan, tagCopulativeSpan } from '../constants/constants'
+import { firstTagSpan, secondTagSpan, tagAmountSpan, articlesText, articlesNum, articlesCaption, tagCaptionSpan, userSpan, tagCopulativeSpan } from '../constants/constants'
 
 export default class ArticlesCard {
   constructor(api) {
@@ -10,7 +10,7 @@ export default class ArticlesCard {
     this.savedArticlesArr = savedArticlesArr;
     this._setUserName();
     this._fillArticlesAmount();
-
+    this._setTags();
   }
 
   _setUserName() {
@@ -32,6 +32,19 @@ export default class ArticlesCard {
       saved = 'сохраненные статьи';
     }
     articlesCaption.textContent = `${saved}`;
+  }
+
+  _setTags() {
+    const keywordsArr = [];
+
+    this.savedArticlesArr.forEach(article => {
+      keywordsArr.push(article.keyword);
+    });
+    
+    const template = `По ключевым словам: ${keywordsArr}`;
+
+    articlesText.insertAdjacentHTML('beforeend', template);
+
   }
 
 

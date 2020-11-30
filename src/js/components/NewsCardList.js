@@ -35,8 +35,6 @@ export default class NewsCardList {
   }
 
   renderSavedArticles(savedArticlesArr) {
-    console.log(savedArticlesArr);
-    console.log('функция отрисовки сохраненных карточек');
     savedArticlesArr.forEach(data => {
       this.addArticle(data, this.resultContainer)
     });
