@@ -16,9 +16,9 @@ const articlesCard = new ArticlesCard(mainApi);
 
 mainApi.getArticles()
   .then((res) => {
-    const savedArticlesArr = res.data;
+    // const savedArticlesArr = res.data;
 
-    articlesCard.render(savedArticlesArr);
+    articlesCard.render(res);
     cardList.renderSavedArticles(res);
   })
   .catch(err => console.log(err));

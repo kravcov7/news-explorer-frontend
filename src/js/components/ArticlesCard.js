@@ -1,4 +1,4 @@
-import { firstTagSpan, secondTagSpan, tagAmountSpan, articlesAmountSpan, articlesAmountCaptionSpan, tagCaptionSpan, userSpan, tagCopulativeSpan } from '../constants/constants'
+import { firstTagSpan, secondTagSpan, tagAmountSpan, articlesNum, articlesCaption, tagCaptionSpan, userSpan, tagCopulativeSpan } from '../constants/constants'
 
 export default class ArticlesCard {
   constructor(api) {
@@ -9,6 +9,7 @@ export default class ArticlesCard {
   render(savedArticlesArr) {
     this.savedArticlesArr = savedArticlesArr;
     this._setUserName();
+    this._fillArticlesAmount();
 
   }
 
@@ -20,6 +21,19 @@ export default class ArticlesCard {
       .catch(err => console.log(err));
   }
 
+  _fillArticlesAmount() {
+    const articlesAmount = this.savedArticlesArr.length;
+    articlesNum.textContent = articlesAmount;
 
-  
+    let saved = 'сохраненных статей';
+    if (articlesAmount === 1) {
+      saved = 'сохраненная статья';
+    } else if (articlesAmount >= 2 && articlesAmount <= 4) {
+      saved = 'сохраненные статьи';
+    }
+    articlesCaption.textContent = `${saved}`;
+  }
+
+
+
 }

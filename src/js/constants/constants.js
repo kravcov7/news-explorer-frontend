@@ -28,6 +28,8 @@ export const quitButton = document.querySelector('#quit-button');
 export const userName = document.querySelector('.menu__button_auth_user');
 
 export const userSpan = document.querySelector('#user-greeting');
+export const articlesNum = document.querySelector('#articles-num');
+export const articlesCaption = document.querySelector('#articles-caption');
 
 export const cardTemplate = document.querySelector('#card-template').content.querySelector('.article');
 

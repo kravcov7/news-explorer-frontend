@@ -67,7 +67,7 @@
         <section class="user-info user-info_container">
           <p class="user-info__subtitle">Сохранённые статьи</p>
             <h1 class="user-info__title"><span class="user-info__title-name" id="user-greeting">Грета</span>, у вас
-                <span class="user-info__num">5</span> сохранённых статей</h1>
+                <span class="user-info__num" id="articles-num">5</span> <span id="articles-caption">сохранённых статей</span></h1>
             <p class="user-info__text">По ключевым словам: <span
                     class="user-info__tag">Природа, Тайга</span> и <span class="user-info__numtag">2-м</span> другим
             </p>
@@ -96,7 +96,7 @@
 
           <div class="result__articles">
 
-            <div class="article">
+            <!-- <div class="article">
               <div class="article__item">
                 <img src="<%=require('./images/image_21.png').default%>" alt="картинка новости" class="article__image" />
                 <div class="article__login ">Убрать из сохранённых
@@ -110,7 +110,7 @@
                 начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
               </p>
               <a class="article__source link" href="lenta.ru" target="_blank">ДЗЕН</a>
-            </div>
+            </div> -->
 
             <template id="card-template">
               <div class="article lower-layer">
