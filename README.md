@@ -2,7 +2,8 @@
 NewsExplorer - сервис, в котором можно найти новости по запросу и сохранить в личном кабинете.
 
 ## Доступ
-+ https://kravcov7.github.io/news-explorer-frontend/
++ ссылка на бэкенд - https://github.com/kravcov7/news-explorer-api/tree/level-1
+
 
 ## Стек
 + HTML5
