@@ -84,43 +84,6 @@
               </div>
             </template>
 
-            <!-- <template id="card-template">
-              <div class="article">
-                <div class="article__item">
-                  <img src="" alt="картинка новости" class="article__image" />
-                  <div class="article__login article__login_displ-none">
-                    Войдите, чтобы сохранить статьи
-                  </div>
-                  <button class="article__icon">
-                    <img
-                    src="<%=require('../src/images/save.svg').default %>"
-                      alt="Иконка сохранить"
-                      id="icon-unhover"
-                    />
-                     <img
-                      src="<%=require('../src/images/save_hover.svg').default %>"
-                      alt="Иконка сохранить"
-                      id="icon-hover"
-                      class="hidden"
-                    />
-                    <img
-                      src="<%=require('../src/images/save_marked.svg').default %>"
-                      alt="Иконка сохранить"
-                      id="icon-mark"
-                      class="hidden"
-                    />
-                  </button>
-                </div>
-                <span class="article__date"></span>
-                <h3 class="article__title"></h3>
-                <p class="article__text"></p>
-                <a
-                  class="article__source link"
-                  href="lenta.ru"
-                  target="_blank"
-                ></a>
-              </div>
-            </template> -->
           </div>
 
           <button class="result__button button">Показать еще</button>
@@ -155,7 +118,7 @@
 
               <div class="form__input-block">
                 <label for="password" class="form__label"><span class="popup__colored-text">Пароль</span></label>
-                <input class="form__input form__input_type_password input" type="password" id="password" name="password" placeholder="Введите пароль" required minlength="5" pattern=".[^\s]{9,}" />
+                <input class="form__input form__input_type_password input" type="password" id="password" name="password" placeholder="Введите пароль" required minlength="5" pattern=".[^\s]{4,}" />
                 <span class="text-error form__error" id="password-error"></span>
               </div>
 
@@ -186,7 +149,7 @@
 
               <div class="form__input-block">
                 <label for="password" class="form__label"><span class="popup__colored-text">Пароль</span></label>
-                <input class="form__input form__input_type_password input" type="password" id="password-signup" name="password" placeholder="Введите пароль" required minlength="9" pattern=".[^\s]{9,}" />
+                <input class="form__input form__input_type_password input" type="password" id="password-signup" name="password" placeholder="Введите пароль" required minlength="5" pattern=".[^\s]{4,}" />
                 <span id="password-signup-error" class="form__error"></span>
               </div>
 
@@ -208,12 +171,12 @@
           </div>
         </div>
 
-        <div id="succes-popup" class="popup popup__success">
+        <div id="succes-popup" class="popup popup__success popup_">
           <div class="popup__content">
             <img class="popup__close" src="<%=require('./images/popup-close-white.svg').default%>" alt="Закрыть" />
             <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
             <p class="popup__text popup__text_left">
-              <span class="popup__colored-text popup__link">Войти</span>
+              <span id="success-message-in" class="popup__colored-text popup__link">Войти</span>
             </p>
           </div>
         </div>

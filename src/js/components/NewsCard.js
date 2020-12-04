@@ -18,7 +18,6 @@ export default class NewsCard {
 
   create() {
     this.card = this.cardTemplate.cloneNode(true);
-    console.log('рисуем карточку')
     this.card.querySelector('.article__source').setAttribute('href', this.data.url)
     this.card.querySelector('.article__title').textContent = this.data.title;
     this.card.querySelector('.article__image').setAttribute('src', this.data.urlToImage);
@@ -49,12 +48,11 @@ export default class NewsCard {
     const iconSave = this.card.querySelector('.article__login');
     this.card.querySelector('#icon-hover').classList.remove('hidden');
     this.card.querySelector('#icon-unhover').classList.add('hidden');
-    
+
     if (document.URL.includes('articles')) {
       iconSave.classList.remove('hidden');
     } else if (localStorage.getItem('token') === null) {
       iconSave.classList.remove('hidden');
-
     }
   }
 
@@ -123,7 +121,7 @@ export default class NewsCard {
 
   _removeListeners() {
     const articleIcon = this.card.querySelector('.article__icon');
-    articleIcon.removeEventListener('mouseover', console.log('удаляем слушатели'));
+    
     articleIcon.removeEventListener('mouseover', this._hoverIcon);
     articleIcon.removeEventListener('mouseout', this._unHoverIcon);
     articleIcon.removeEventListener('click', this._saveArticle);

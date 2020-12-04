@@ -10,19 +10,22 @@ formSearchEvent(keyword) {
   event.preventDefault();
   // const inputData = formSearch.getInfo();
   resultLoader.classList.remove('hidden');
+  resultBlock.classList.add('hidden');
   this.api
     .getNews({keyword})
     .then((res) => {
-      console.log(keyword)
       if (res.articles.length === 0) {
         resultNotFound.classList.remove("hidden");
+        resultBlock.classList.add('hidden');
+        
       } else {
+        resultNotFound.classList.add("hidden");
         this.cardList.render(res.articles);
         resultBlock.classList.remove('hidden');
       }
     })
     .then(() => {
-      resultBlock.classList.remove('hidden');
+      // resultBlock.classList.remove('hidden');
       resultLoader.classList.add('hidden');
     })
     .catch((err) => console.log(err));

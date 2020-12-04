@@ -1,6 +1,7 @@
 import './../styles/articles.css';
 
-import { defaultMainApi, resultContainer, cardTemplate, headerIcon } from "../js/constants/constants";
+import { resultContainer, cardTemplate, headerIcon } from "../js/constants/constants";
+import { newsApiServer, defaultMainApi } from '../js/config/config';
 import MainApi from "../js/api/MainApi";
 import Header from "../js/components/Header";
 import NewsCardList from "../js/components/NewsCardList";

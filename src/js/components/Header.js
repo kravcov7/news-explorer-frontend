@@ -13,7 +13,7 @@ export default class Header {
     this.api
       .getUser()
       .then((res) => {
-        console.log(res)
+        console.log(res, '-пользователь');
         if (res === undefined) {
           this.auth.classList.remove('hidden');
           this.articleLink.classList.add('hidden');
@@ -36,9 +36,9 @@ export default class Header {
     const cross = this.templateClose.cloneNode(true);
     this.headerIcon.append(cross);
     this.headerIcon.addEventListener('click', () => this.closeMenu());
-    document.querySelector('.header__link').classList.remove('header__link_active'); // сломается на странице статей
+    document.querySelector('.header__link').classList.remove('header__link_active');
     document.querySelector('#article-link').classList.remove('header__link_active');
-    document.querySelector('.header').classList.add('header_opened'); // придумать именование и вынести в конструктор
+    document.querySelector('.header').classList.add('header_opened'); 
     document.querySelector('.header__nav').classList.add('header__nav_opened');
     document.querySelector('.header__menu').classList.add('header__menu_opened');
     document.querySelector('.body').classList.add('body_overlay');

@@ -1,8 +1,10 @@
 export default class MainApi {
-  constructor() {}
+  constructor(server) {
+    this.server = server;
+  }
 
   signUp = ({ email, password, name }) => {
-    return fetch(`http://localhost:3000/signup`, {
+    return fetch(`${this.server}signup`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -22,7 +24,7 @@ export default class MainApi {
   };
 
   signIn = ({ email, password }) => {
-    return fetch(`http://localhost:3000/signin`, {
+    return fetch(`${this.server}signin`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -37,7 +39,7 @@ export default class MainApi {
     // });
   };
   getUser() {
-    return fetch(`http://localhost:3000/users/me`, {
+    return fetch(`${this.server}users/me`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -57,7 +59,7 @@ export default class MainApi {
   }
 
   unlogin = () => {
-    return fetch(`http://localhost:3000/exit`, {
+    return fetch(`${this.server}exit`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -74,7 +76,7 @@ export default class MainApi {
   };
 
   getArticles = () => {
-    return fetch(`http://localhost:3000/articles`, {
+    return fetch(`${this.server}articles`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -94,7 +96,7 @@ export default class MainApi {
   };
 
   createArticle = (saveData) => {
-    return fetch(`http://localhost:3000/articles`, {
+    return fetch(`${this.server}articles`, {
       method: 'POST',
       credentials: 'include',
       headers: this.headers,
@@ -111,7 +113,7 @@ export default class MainApi {
   };
 
   postArticle = (articleData) => {
-    return fetch(`http://localhost:3000/articles`, {
+    return fetch(`${this.server}articles`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -137,7 +139,7 @@ export default class MainApi {
   }
 
   deleteCard = (id) => {
-    return fetch(`http://localhost:3000/articles/${id}`, {
+    return fetch(`${this.server}articles/${id}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: this.headers,

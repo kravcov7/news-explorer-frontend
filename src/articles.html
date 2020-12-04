@@ -18,29 +18,6 @@
   <body class="body">
     <div class="root">
       <header class="header header_white">
-        <!-- <div class="header-menu header-menu-auth">
-          <div class="logo logo_margin">
-            <h1 class="logo__text logo__text_black">NewsExplorer</h1>
-          </div>
-          <nav class="header-menu__nav-container">
-            <ul class="header-menu__nav">
-              <li>
-                <a class="header-menu__link header-menu__link_auth" href="./index.html">Главная</a>
-              </li>
-              <li>
-                <a class="header-menu__link header-menu__link_auth header-menu__link_active-black" href="#">Сохранённые статьи</a>
-              </li>
-            </ul>
-
-            <button class="header-menu-auth__button header-menu__button button">
-              <span class="header-menu-auth__user-name">Грета</span>
-                    <img src="<%=require('./images/exit.svg').default%>" alt="выход"
-                         class="header-menu-auth__logout">
-            </button>
-          </nav>
-          <button class="header-menu__nav-mobile-toggle-button header-menu__nav-mobile-toggle-button_black">
-          </button>
-        </div> -->
 
         <div class="header-menu header-menu-auth">
           <div class="logo logo_margin">
@@ -67,7 +44,7 @@
         <section class="user-info user-info_container">
           <p class="user-info__subtitle">Сохранённые статьи</p>
             <h1 class="user-info__title"><span class="user-info__title-name" id="user-greeting">Грета</span>, у вас
-                <span class="user-info__num" id="articles-num">5</span> <span id="articles-caption">сохранённых статей</span></h1>
+                <span class="user-info__num" id="articles-num">нет</span> <span id="articles-caption">сохранённых статей</span></h1>
             <p class="user-info__text">
               <!-- По ключевым словам: <span
                     class="user-info__tag">Природа, Тайга</span> и <span class="user-info__numtag">2-м</span> другим -->
@@ -79,21 +56,6 @@
         <section class="result result_container-articles">
 
           <div class="result__articles">
-            <!-- <div class="article">
-              <div class="article__item">
-                <img src="<%=require('./images/image_21.png').default%>" alt="картинка новости" class="article__image" />
-                <div class="article__login ">Убрать из сохранённых
-                </div>
-                <div class="article__label">Природа</div>
-                <div class="article__icon article__delete"></div>
-              </div>
-              <span class="article__date">2 августа, 2019</span>
-              <h3 class="article__title">Национальное достояние - парки</h3>
-              <p class="article__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <a class="article__source link" href="lenta.ru" target="_blank">ДЗЕН</a>
-            </div> -->
 
             <template id="card-template">
               <div class="article lower-layer">
@@ -126,7 +88,6 @@
           </div>
 
         </section>
-
 
         <section class="author">
           <picture class="author__avatar">
@@ -228,7 +189,7 @@
                   name="password-signup"
                   placeholder="Введите пароль"
                   required
-                  minlength="8"
+                  minlength="3"
                   pattern=".[^\s]{8,}"
                 >
                 <span id="password-error-signup" class="form__error">Введите более 8 символов</span>

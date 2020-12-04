@@ -1,5 +1,7 @@
 export default class NewsApi {
-  constructor() {}
+  constructor(server) {
+    this.server = server;
+  }
 
   getNews({keyword}) {
     console.log(keyword)
@@ -9,7 +11,7 @@ export default class NewsApi {
     const startDate = lastweek.toISOString().slice(0, 10);
     const finalDate = today.toISOString().slice(0, 10);
     return fetch(
-      `https://newsapi.org/v2/everything?q=${keyword}&from=${startDate}&to=${finalDate}&apiKey=06d09e9de8d9474b92c5f3cc6c08c857&pageSize=100`
+      `${this.server}v2/everything?q=${keyword}&from=${startDate}&to=${finalDate}&apiKey=06d09e9de8d9474b92c5f3cc6c08c857&pageSize=100`
     ).then((res) => this._returnJson(res));
   }
 
