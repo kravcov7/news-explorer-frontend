@@ -32,11 +32,11 @@ export default class MainApi {
       },
 
       body: JSON.stringify({ email, password }),
+    })
+    .then((res) => this._returnJson(res))
+    .catch((err) => {
+      throw err;
     });
-    // .then((res) => this._returnJson(res))
-    // .catch((err) => {
-    //   throw err;
-    // });
   };
   getUser() {
     return fetch(`${this.server}users/me`, {
