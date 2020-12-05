@@ -16,15 +16,15 @@ export default class PopupSignIn extends Popup {
       email: this.mail.value,
       password: this.password.value,
     };
-
     // this.formValidator(this.form).checkFormValid();
     this.api.signIn(loginData)
-      .then((res) => {
-        localStorage.setItem('token', res.token);
+    .then((res) => {
+      console.log(this.api)
+        // localStorage.setItem('token', res.token);
         super.close();
         this.header.render();
       })
-      .catch((err) => console.log(err)
+      .catch((err) => console.log(this.api)
       // { this.popup.querySelector('.popup__error-message_centred').textContent = err.message; }
       )
   }

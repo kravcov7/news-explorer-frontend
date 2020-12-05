@@ -23,7 +23,7 @@ export default class PopupSignUp extends Popup {
       .then((res) => {
         super.close();
         this.messagePopup.open();
-        localStorage.setItem('token', res.token);
+        // localStorage.setItem('token', res.token);
       })
       .catch((err) => console.log(err)
       // { this.popup.querySelector('.popup__error-message_centred').textContent = err.message; }

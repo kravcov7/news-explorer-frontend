@@ -26,18 +26,21 @@ export default class MainApi {
   signIn = ({ email, password }) => {
     return fetch(`${this.server}signin`, {
       method: 'POST',
-      credentials: 'include',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-
+      credentials: 'include',
       body: JSON.stringify({ email, password }),
     })
-    .then((res) => this._returnJson(res))
-    .catch((err) => {
-      throw err;
-    });
-  };
+      // .then(res => {
+      //   if (res.ok) {
+      //     return res.json();
+      //   }
+      //   const json = res.json();
+      //   return json.then(Promise.reject.bind(Promise))
+      // })
+      // .catch((err) => { throw err; })
+  }
   getUser() {
     return fetch(`${this.server}users/me`, {
       method: 'GET',
