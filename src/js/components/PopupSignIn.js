@@ -19,12 +19,12 @@ export default class PopupSignIn extends Popup {
     // this.formValidator(this.form).checkFormValid();
     this.api.signIn(loginData)
     .then((res) => {
-      console.log(this.api)
+
         // localStorage.setItem('token', res.token);
         super.close();
         this.header.render();
       })
-      .catch((err) => console.log(this.api)
+      .catch((err) => console.log(err)
       // { this.popup.querySelector('.popup__error-message_centred').textContent = err.message; }
       )
   }

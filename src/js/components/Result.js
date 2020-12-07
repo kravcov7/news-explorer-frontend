@@ -9,6 +9,9 @@ export default class Result {
 formSearchEvent(keyword) {
   event.preventDefault();
   // const inputData = formSearch.getInfo();
+  while (resultContainer.firstChild) {
+    resultContainer.removeChild(resultContainer.firstChild);
+  };
   resultLoader.classList.remove('hidden');
   resultBlock.classList.add('hidden');
   this.api
@@ -17,7 +20,7 @@ formSearchEvent(keyword) {
       if (res.articles.length === 0) {
         resultNotFound.classList.remove("hidden");
         resultBlock.classList.add('hidden');
-        
+
       } else {
         resultNotFound.classList.add("hidden");
         this.cardList.render(res.articles);
