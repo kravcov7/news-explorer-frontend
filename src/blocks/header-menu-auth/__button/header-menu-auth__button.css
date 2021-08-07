@@ -1,0 +1,16 @@
+.header-menu-auth__button {
+  border: 1px solid #1a1b22;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: max-content;
+  padding: 12px 19px;
+}
+
+.user-info__button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 19px;
+  width: max-content;
+}

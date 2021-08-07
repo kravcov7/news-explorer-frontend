@@ -1,0 +1,6 @@
+.popup__overlay {
+  position: absolute;
+  z-index: 6;
+  height: 100vh;
+  width: 100vw;
+}
