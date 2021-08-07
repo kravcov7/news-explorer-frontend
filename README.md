@@ -3,7 +3,7 @@ NewsExplorer - сервис, в котором можно найти новос�
 
 ## Доступ
 + ссылка на бэкенд - https://github.com/kravcov7/news-explorer-api/tree/level-1
-
++ деплой - https://kravcov7.github.io/news-explorer-frontend/
 
 ## Стек
 + HTML5

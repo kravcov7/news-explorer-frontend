@@ -21,7 +21,8 @@ export default class NewsCard {
     this.card.querySelector('.article__source').setAttribute('href', this.data.url)
     this.card.querySelector('.article__title').textContent = this.data.title;
     this.card.querySelector('.article__image').setAttribute('src', this.data.urlToImage);
-    this.card.querySelector('.article__date').textContent = this.data.publishedAt;
+    // this.card.querySelector('.article__date').textContent = this.data.publishedAt;
+    this.card.querySelector('.article__date').textContent = editDataFormat(this.data.publishedAt.slice(0, 10));
     this.card.querySelector('.article__text').textContent = this.data.description;
     this.card.querySelector('.article__source').textContent = this.data.source.name;
     this.card.querySelector('.article__icon').addEventListener('click', this._saveArticle);
@@ -46,6 +47,7 @@ export default class NewsCard {
 
   _hoverIcon() {
     const iconSave = this.card.querySelector('.article__login');
+    // const userId = this.api.getUser();
     this.card.querySelector('#icon-hover').classList.remove('hidden');
     this.card.querySelector('#icon-unhover').classList.add('hidden');
 
@@ -54,6 +56,7 @@ export default class NewsCard {
     } else if (localStorage.getItem('token') === null) {
       iconSave.classList.remove('hidden');
     }
+    // console.log(userId)
   }
 
   _unHoverIcon() {
@@ -121,7 +124,7 @@ export default class NewsCard {
 
   _removeListeners() {
     const articleIcon = this.card.querySelector('.article__icon');
-    
+
     articleIcon.removeEventListener('mouseover', this._hoverIcon);
     articleIcon.removeEventListener('mouseout', this._unHoverIcon);
     articleIcon.removeEventListener('click', this._saveArticle);
